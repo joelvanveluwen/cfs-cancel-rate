@@ -67,6 +67,25 @@ const monthShort = (m: string) => {
     timeZone: "UTC",
   });
 };
+const dateLabel = (d: string) =>
+  new Date(`${d}T00:00:00Z`).toLocaleDateString("en-AU", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+const timestampLabel = (d: string | null) =>
+  d
+    ? new Date(d).toLocaleString("en-AU", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: "Australia/Sydney",
+        timeZoneName: "short",
+      })
+    : "not available";
 
 function sumByMonth(rows: Row[]): Map<string, { s: number; c: number; ot: number; f: number }> {
   const map = new Map<string, { s: number; c: number; ot: number; f: number }>();
@@ -274,6 +293,9 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ c
   const last12 = months.slice(-12);
   const last6 = months.slice(-6);
   const frameMonths = last6;
+  const monthlyRefresh = dateLabel(data.fetched_at);
+  const recentRefresh = timestampLabel(recent.fetched_at);
+  const coverageRange = `${monthName(months[0])} to ${monthName(latest)}`;
 
   const lm = byMonth.get(latest)!;
   const lmNat = natByMonth.get(latest);
@@ -377,7 +399,9 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ c
             Sydney were cancelled, a <strong>{pct(lm.c, lm.s)}</strong> cancellation rate
             {lmNat && <> compared with {pct(lmNat.c, lmNat.s)} nationally</>}.
           </p>
-          <p className="hero-small">Monthly BITRE route data with a recent flight-level disruption log for Coffs Harbour.</p>
+          <p className="hero-small">
+            Monthly BITRE route data refreshed {monthlyRefresh}. The latest reporting month is {monthName(latest)}.
+          </p>
         </div>
       </header>
 
@@ -493,7 +517,9 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ c
             </tbody>
           </table>
         </div>
-        <p className="caption">Number shown is flights cancelled that month.</p>
+        <p className="caption">
+          Number shown is flights cancelled that month. BITRE coverage in this snapshot: {coverageRange}; refreshed {monthlyRefresh}.
+        </p>
       </Section>
 
       <Section label="split" title="Who and which way" note="Cancellation rate by direction and airline over the last 6 months.">
@@ -534,7 +560,11 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ c
         </table>
       </Section>
 
-      <Section label="recent" title={`Disruption log, last ${recent.window_days} days`} note="Specific Coffs Harbour flights recorded as cancelled or delayed by 60 minutes or more.">
+      <Section
+        label="recent"
+        title={`Disruption log, last ${recent.window_days} days`}
+        note={`Specific Coffs Harbour flights recorded as cancelled or delayed by 60 minutes or more. Flight-level log last refreshed ${recentRefresh}.`}
+      >
         {recent.flights.length === 0 ? (
           <div className="empty-state">
             <p>
@@ -576,7 +606,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ c
                 ))}
               </tbody>
             </table>
-            <p className="caption">Source: AeroDataBox. Last updated {recent.fetched_at?.slice(0, 16).replace("T", " ")} UTC.</p>
+            <p className="caption">Source: AeroDataBox. Flight-level log last refreshed {recentRefresh}.</p>
           </div>
         )}
       </Section>
@@ -590,11 +620,13 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ c
           </p>
           <p>
             BITRE reports scheduled sectors, cancellations and punctuality by route, airline and direction. The
-            publication is monthly and usually appears several weeks after the end of the reporting month.
+            publication is monthly and usually appears several weeks after the end of the reporting month. This
+            snapshot was refreshed on {monthlyRefresh} and covers {coverageRange}.
           </p>
           <p>
             The recent disruption table uses flight-level AeroDataBox records for Coffs Harbour Airport. It is separate
-            from the BITRE monthly series and is included to show individual recent flights where available.
+            from the BITRE monthly series and is included to show individual recent flights where available. The current
+            flight-level log was last refreshed {recentRefresh}.
           </p>
         </div>
       </Section>
@@ -604,7 +636,7 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ c
       </section>
 
       <footer>
-        Data through {monthName(latest)} / fetched {data.fetched_at} / BITRE, CC-BY 3.0 AU / built in Coffs Harbour by{" "}
+        BITRE through {monthName(latest)} / monthly refresh {monthlyRefresh} / recent log refresh {recentRefresh} / CC-BY 3.0 AU / built in Coffs Harbour by{" "}
         <a href="https://vanveluwen.dev">vanveluwen.dev</a>
       </footer>
     </div>
