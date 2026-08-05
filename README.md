@@ -20,7 +20,7 @@ or automate it with a monthly GitHub Action / Vercel cron.
 - Scheduled sectors, cancellations, on-time departures/arrivals for Coffs Harbour–Sydney, per airline, per direction
 - A national all-routes benchmark plus Port Macquarie–Sydney and Ballina–Sydney comparison routes
   (toggle on the trend chart)
-- Current checked-in BITRE snapshot: refreshed 2026-06-29, with route data through May 2026.
+- Current checked-in BITRE snapshot: refreshed 2026-08-05, with route data through May 2026.
 - Current checked-in flight-level disruption log: last refreshed 2026-06-10 11:39 AEST. If the
   AeroDataBox/API key fails, `npm run refresh-data` leaves this file unchanged.
 

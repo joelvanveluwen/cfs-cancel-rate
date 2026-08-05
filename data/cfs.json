@@ -1,7 +1,7 @@
 {
  "source": "BITRE Domestic Airlines On Time Performance (data.gov.au, CC-BY 3.0 AU)",
  "source_url": "https://data.gov.au/data/dataset/domestic-airline-on-time-performance",
- "fetched_at": "2026-06-29",
+ "fetched_at": "2026-08-05",
  "latest_month": "2026-05",
  "cfs": [
   {
