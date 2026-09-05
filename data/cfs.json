@@ -1,8 +1,8 @@
 {
  "source": "BITRE Domestic Airlines On Time Performance (data.gov.au, CC-BY 3.0 AU)",
  "source_url": "https://data.gov.au/data/dataset/domestic-airline-on-time-performance",
- "fetched_at": "2026-08-05",
- "latest_month": "2026-05",
+ "fetched_at": "2026-09-05",
+ "latest_month": "2026-07",
  "cfs": [
   {
    "month": "2004-01",
@@ -16005,6 +16005,114 @@
    "dep_on_time": 136,
    "airline": "All Airlines",
    "direction": "arrivals"
+  },
+  {
+   "month": "2026-06",
+   "scheduled": 112,
+   "flown": 110,
+   "cancelled": 2,
+   "dep_on_time": 87,
+   "airline": "QantasLink",
+   "direction": "departures"
+  },
+  {
+   "month": "2026-06",
+   "scheduled": 112,
+   "flown": 111,
+   "cancelled": 1,
+   "dep_on_time": 85,
+   "airline": "QantasLink",
+   "direction": "arrivals"
+  },
+  {
+   "month": "2026-06",
+   "scheduled": 77,
+   "flown": 77,
+   "cancelled": 0,
+   "dep_on_time": 58,
+   "airline": "Rex Airlines",
+   "direction": "departures"
+  },
+  {
+   "month": "2026-06",
+   "scheduled": 74,
+   "flown": 74,
+   "cancelled": 0,
+   "dep_on_time": 50,
+   "airline": "Rex Airlines",
+   "direction": "arrivals"
+  },
+  {
+   "month": "2026-06",
+   "scheduled": 189,
+   "flown": 187,
+   "cancelled": 2,
+   "dep_on_time": 145,
+   "airline": "All Airlines",
+   "direction": "departures"
+  },
+  {
+   "month": "2026-06",
+   "scheduled": 186,
+   "flown": 185,
+   "cancelled": 1,
+   "dep_on_time": 135,
+   "airline": "All Airlines",
+   "direction": "arrivals"
+  },
+  {
+   "month": "2026-07",
+   "scheduled": 116,
+   "flown": 115,
+   "cancelled": 1,
+   "dep_on_time": 85,
+   "airline": "QantasLink",
+   "direction": "departures"
+  },
+  {
+   "month": "2026-07",
+   "scheduled": 116,
+   "flown": 116,
+   "cancelled": 0,
+   "dep_on_time": 78,
+   "airline": "QantasLink",
+   "direction": "arrivals"
+  },
+  {
+   "month": "2026-07",
+   "scheduled": 85,
+   "flown": 85,
+   "cancelled": 0,
+   "dep_on_time": 68,
+   "airline": "Rex Airlines",
+   "direction": "departures"
+  },
+  {
+   "month": "2026-07",
+   "scheduled": 81,
+   "flown": 81,
+   "cancelled": 0,
+   "dep_on_time": 58,
+   "airline": "Rex Airlines",
+   "direction": "arrivals"
+  },
+  {
+   "month": "2026-07",
+   "scheduled": 201,
+   "flown": 200,
+   "cancelled": 1,
+   "dep_on_time": 153,
+   "airline": "All Airlines",
+   "direction": "departures"
+  },
+  {
+   "month": "2026-07",
+   "scheduled": 197,
+   "flown": 197,
+   "cancelled": 0,
+   "dep_on_time": 136,
+   "airline": "All Airlines",
+   "direction": "arrivals"
   }
  ],
  "national": [
@@ -17890,6 +17998,20 @@
    "flown": 43308,
    "cancelled": 644,
    "dep_on_time": 35860
+  },
+  {
+   "month": "2026-06",
+   "scheduled": 42997,
+   "flown": 42346,
+   "cancelled": 651,
+   "dep_on_time": 34702
+  },
+  {
+   "month": "2026-07",
+   "scheduled": 47432,
+   "flown": 46714,
+   "cancelled": 718,
+   "dep_on_time": 36821
   }
  ],
  "compare": {
@@ -20791,6 +20913,34 @@
     "flown": 153,
     "cancelled": 9,
     "dep_on_time": 97
+   },
+   {
+    "month": "2026-06",
+    "scheduled": 161,
+    "flown": 155,
+    "cancelled": 6,
+    "dep_on_time": 119
+   },
+   {
+    "month": "2026-06",
+    "scheduled": 164,
+    "flown": 158,
+    "cancelled": 6,
+    "dep_on_time": 116
+   },
+   {
+    "month": "2026-07",
+    "scheduled": 170,
+    "flown": 163,
+    "cancelled": 7,
+    "dep_on_time": 132
+   },
+   {
+    "month": "2026-07",
+    "scheduled": 174,
+    "flown": 169,
+    "cancelled": 5,
+    "dep_on_time": 135
    }
   ],
   "bnk": [
@@ -24433,6 +24583,34 @@
     "flown": 149,
     "cancelled": 2,
     "dep_on_time": 122
+   },
+   {
+    "month": "2026-06",
+    "scheduled": 143,
+    "flown": 143,
+    "cancelled": 0,
+    "dep_on_time": 123
+   },
+   {
+    "month": "2026-06",
+    "scheduled": 143,
+    "flown": 143,
+    "cancelled": 0,
+    "dep_on_time": 125
+   },
+   {
+    "month": "2026-07",
+    "scheduled": 170,
+    "flown": 169,
+    "cancelled": 1,
+    "dep_on_time": 132
+   },
+   {
+    "month": "2026-07",
+    "scheduled": 170,
+    "flown": 170,
+    "cancelled": 0,
+    "dep_on_time": 119
    }
   ]
  }

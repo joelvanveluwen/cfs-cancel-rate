@@ -1,28 +1,5 @@
 {
- "fetched_at": "2026-08-05T05:26:18.490Z",
+ "fetched_at": "2026-09-05T07:27:17.808Z",
  "window_days": 14,
- "flights": [
-  {
-   "date": "2026-08-05",
-   "callsign": "ZL6413",
-   "airline": "Rex Regional Express",
-   "kind": "departure",
-   "other_airport": "SYD",
-   "scheduled_local": "06:30",
-   "status": "delayed",
-   "delay_min": 72,
-   "source": "AeroDataBox"
-  },
-  {
-   "date": "2026-08-04",
-   "callsign": "ZL6437",
-   "airline": "Rex Regional Express",
-   "kind": "departure",
-   "other_airport": "SYD",
-   "scheduled_local": "16:20",
-   "status": "delayed",
-   "delay_min": 78,
-   "source": "AeroDataBox"
-  }
- ]
+ "flights": []
 }
